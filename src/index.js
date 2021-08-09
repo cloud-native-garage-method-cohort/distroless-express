@@ -1,13 +1,6 @@
-const express = require('express')
+const app = require('./app')
 
 const PORT = 3000
-const app = express()
-
-app.get('/', (req, res) => {
-  res.json({
-    status: "don’t sweat the technique",
-  })
-})
 
 app.listen(PORT, () => {
   console.log('API Running', PORT)
