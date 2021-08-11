@@ -3,9 +3,11 @@ FROM node:14 as build
 ADD . /app
 WORKDIR /app
 
-RUN npm install --production
+RUN npm install
+RUN npm run compile
+RUN rm -rf src
 
 FROM gcr.io/distroless/nodejs:14
 COPY --from=build /app /app
 WORKDIR /app
-CMD ["src/index.js"]
+CMD ["dist/index.js"]
