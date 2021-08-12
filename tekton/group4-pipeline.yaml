@@ -4,7 +4,7 @@ metadata:
   annotations:
     app.openshift.io/runtime: nodejs
   labels:
-    app: nodejs-pipeline
+    app: express-pipeline
     app.kubernetes.io/instance: nodejs-pipeline-instance
     app.kubernetes.io/name: nodejs-pipeline
   name: nodejs-pipeline
