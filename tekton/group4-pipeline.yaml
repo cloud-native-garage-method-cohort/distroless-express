@@ -47,9 +47,10 @@ spec:
           workspace: pipeline-shared-data
       params:
         - name: PATH_CONTEXT
-          value: "express-sample-app"
+          value: "DISTROLESS-EXPRESS"
         - name: ARGS
           value:
+            - install
             - test
       runAfter:
         - clone-repository
@@ -64,7 +65,7 @@ spec:
         - npm-tests
       params:
         - name: IMAGE
-          value: "quay.io/repository/alex_best_ibm/the-best-group-4-project:$(tasks.clone-repository.results.commit)"
+          value: "quay.io/alex_best_ibm/the-best-group-4-project:$(tasks.clone-repository.results.commit)"
     - name: kustomize
       taskRef:
         kind: Task
