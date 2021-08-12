@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: distroless-app
+    app.kubernetes.io/instance: distroless-app-instance
+    app.kubernetes.io/name: distroless-app
+  name: distroless-app
+spec:
+  ports:
+    - name: http
+      port: 80
+      protocol: TCP
+      targetPort: 3000
+  selector:
+    app.kubernetes.io/instance: distroless-app-instance
+    app.kubernetes.io/name: distroless-app
+  sessionAffinity: None
+  type: ClusterIP
