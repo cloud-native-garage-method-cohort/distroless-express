@@ -1,0 +1,15 @@
+apiVersion: v1
+imagePullSecrets:
+- name: build-bot-dockercfg-j8hxl
+kind: ServiceAccount
+metadata:
+  creationTimestamp: "2021-08-12T06:07:11Z"
+  name: build-bot
+  namespace: the-best-group-4-project
+  resourceVersion: "7874669"
+  selfLink: /api/v1/namespaces/the-best-group-4-project/serviceaccounts/build-bot
+  uid: 67d6c212-3257-47d0-89ab-15f7707d6e2e
+secrets:
+- name: build-bot-token-qgljj
+- name: build-bot-dockercfg-j8hxl
+- name: quay-io-credentials
