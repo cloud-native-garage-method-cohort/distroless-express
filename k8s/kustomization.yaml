@@ -5,9 +5,9 @@ resources:
 - service.yaml
 - route.yaml
 commonLabels:
-  app: group4-distroless-app
-  app.kubernetes.io/instance: group4-distroless-app-instance
-  app.kubernetes.io/name: group4-distroless-app
+  app: group4-the-best-group-4-project
+  app.kubernetes.io/instance: group4-the-best-group-4-project-instance
+  app.kubernetes.io/name: group4-the-best-group-4-project
 images:
 - name: quay.io/alex_best_ibm/the-best-group-4-project
   newName: quay.io/alex_best_ibm/the-best-group-4-project
