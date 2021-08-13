@@ -9,9 +9,8 @@ metadata:
     app.kubernetes.io/instance: distroless-app-instance
     app.kubernetes.io/name: distroless-app
     app.openshift.io/runtime: js
-  name: distroless-app
 spec:
-  progressDeadlineSeconds: 600
+  progressDeadlineSeconds: 800
   replicas: 1
   revisionHistoryLimit: 10
   selector:
@@ -47,15 +46,15 @@ spec:
             - containerPort: 3000
               name: http
               protocol: TCP
-          readinessProbe:
-            failureThreshold: 3
-            httpGet:
-              path: /
-              port: http
-              scheme: HTTP
-            periodSeconds: 10
-            successThreshold: 1
-            timeoutSeconds: 1
+          # readinessProbe:
+          #   failureThreshold: 3
+          #   httpGet:
+          #     path: /
+          #     port: http
+          #     scheme: HTTP
+          #   periodSeconds: 10
+          #   successThreshold: 1
+          #   timeoutSeconds: 1
           resources: {}
           terminationMessagePath: /dev/termination-log
           terminationMessagePolicy: File
@@ -64,3 +63,4 @@ spec:
       schedulerName: default-scheduler
       securityContext: {}
       terminationGracePeriodSeconds: 30
+## MIGHT NEED TO RUN THE KUSTOMIZE EDIT IMAGE COMANDS HERE WITH AN UPSTREAM.. ? 
